@@ -1,14 +1,20 @@
-entrada, saida = map(int, input().split())
+entrada = int(input())
+saida = int(input())
+
+
+num = 0
+soma = 0
+i=0
 
 if saida < entrada:
-    entrada *= 60
-    saida *= 60
-    saida += 1440
-    print(f'O JOGO DUROU {(((saida - entrada)/60)):.0f} HORA(S)')
+    temp = entrada
+    entrada = saida
+    saida = temp
 
-elif saida > entrada:
-    entrada *= 60
-    saida *= 60 
-    print(f'O JOGO DUROU {((saida-entrada) / 60):.0f} HORA(S)')
-else:
-    print('O JOGO DUROU 24 HORA(S)')
+while entrada < saida:
+    if entrada % 2 != 0 and i != 0:
+        soma+=entrada
+    entrada+=1
+    i+=1
+    
+print(soma)
